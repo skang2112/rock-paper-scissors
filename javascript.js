@@ -9,7 +9,7 @@ function capitalise(word) { //capitalises only the first letter of a word, conve
     return firstLetter + rest;
 }
 
-function playRound(playerSelection, computerSelection) { //plays a single round of RPS, and console.log(s a string declaring the winner
+function playRound(playerSelection, computerSelection) { //prints a string declaring the  winner of a single round
     let casePlayerSelection = capitalise(playerSelection); //makes playerSelection case insensitive
 
     if (casePlayerSelection === computerSelection) {
