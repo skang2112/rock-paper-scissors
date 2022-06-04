@@ -3,7 +3,7 @@ function computerPlay() { //randomly returns Rock, Paper, or Scissors.
     return choice[Math.floor(Math.random()*3)];
 }
 
-function capitalise(word) { //capitalises only the first letter of a word
+function capitalise(word) { //capitalises only the first letter of a word, converts the rest to lower case
     firstLetter = word[0].toUpperCase();
     rest = word.slice(1).toLowerCase();
     return firstLetter + rest;
@@ -36,7 +36,7 @@ function playRound(playerSelection, computerSelection) { //plays a single round 
     }
 }
 
-function report(playerScore, computerScore) {
+function giveReport(playerScore, computerScore) { //Declares the winner between two scores
     if (playerScore > computerScore) {
         return "You Win! The score was " + playerScore + " to " + computerScore;
     }
@@ -46,7 +46,7 @@ function report(playerScore, computerScore) {
     else return "It's a Tie!";
 }
 
-function game() {
+function game() { //takes user prompt for RPS choice, displays round result and announces final score after 5 rounds
     let playerScore = 0;
     let computerScore = 0;
     for (let i=0; i<5; i++) {
@@ -60,7 +60,7 @@ function game() {
         }
     }
 
-    console.log(report(playerScore, computerScore));
+    console.log(giveReport(playerScore, computerScore));
 }
 
 game();
