@@ -1,8 +1,9 @@
 const buttons = document.querySelectorAll('button');
 const results = document.querySelector('.results');
-const roundResult = document.createElement('p');
-const gameResult = document.createElement('p');
-const currentScore = document.createElement('p');
+const roundResult = document.createElement('div');
+const gameResult = document.createElement('div');
+const currentScore = document.createElement('div');
+const playAgain = document.createElement('button');
 
 let playerScore = 0;
 let computerScore = 0;
@@ -12,6 +13,15 @@ buttons.forEach((button) => {
         game(button.value);
     })
 });
+
+playAgain.addEventListener('click', () => {
+    playerScore = 0;
+    computerScore = 0;
+    results.removeChild(playAgain); // look into how to remove all children at once
+    results.removeChild(roundResult);
+    results.removeChild(gameResult);
+    results.removeChild(currentScore);
+})
 
 function computerPlay() { //randomly returns Rock, Paper, or Scissors.
     const choice = ["Rock", "Paper", "Scissors"];
@@ -75,5 +85,11 @@ function game(playerSelection) { //keeps tally of and displays running score, an
     if (playerScore >= 5 || computerScore >= 5) {
         gameResult.textContent = giveReport(playerScore, computerScore);
         results.appendChild(gameResult);
+    }
+
+    if (playerScore == 5 || computerScore == 5) {
+        playAgain.textContent = "Play Again?"
+        playAgain.setAttribute("style", "color: white; background-color: red; border-radius: 20px; font-weight: 700;border: none; padding: 10px; font-family: 'Press Start 2P', 'Kdam Thmor Pro', roboto; transition: width 0.5s, height 0.5s;");
+        results.appendChild(playAgain);
     }
 }

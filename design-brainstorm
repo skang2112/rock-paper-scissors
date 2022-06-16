@@ -1,0 +1,12 @@
+- Header ("Rock, Paper, Scissors")
+
+- Selection : 
+    Pyramid arrangement, element triangle style 
+    Button gets bigger when user hovers over it (animation depending on weapon?)
+    Result text red or green depending on whether player wins or loses? Would have to do that in js directly though.
+
+- Final score : 
+    Blanks out whole screen, goes over? 
+    Note : add "play again" button. (js)
+
+- Everything center aligned
