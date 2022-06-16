@@ -45,8 +45,8 @@ body {
     border-color: red;
     border-style: outset;
     background-color: #1d1c1c;
+    text-align: center;
     color: white;
-    padding: 10px 20px;
     width: 150px;
     height: 150px;
     border-radius: 20px;
